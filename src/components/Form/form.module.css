@@ -1,0 +1,27 @@
+.container{
+    height: 570px;
+    background-color: #F8DEF5;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.form{
+    background-color: white;
+    width: 100px;
+    padding: 100px;
+    border: 2px solid #ED88E1;
+}
+
+p{
+    font-size: 12px;
+    
+    
+}
+
+.boton{
+    padding: 0;
+    height: 30px;
+    width: 80px;
+    border-radius: 50px;
+}

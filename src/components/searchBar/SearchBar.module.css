@@ -1,0 +1,22 @@
+.container{
+       padding: 10px;
+   
+}
+
+.boton{
+    background-color: #ED88E1;
+    font-family: Verdana;
+    border: 2px solid #ED88E1;
+    height: 30px;
+}
+
+.barraDeBusqueda{
+    border: 2px solid #ED88E1;
+    height: 30px ;
+    margin-left: 1000px; 
+}
+
+.boton:hover{
+    background-color: #FFCDF9;
+    border: 2px solid #FFCDF9;
+}
