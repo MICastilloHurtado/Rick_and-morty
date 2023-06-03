@@ -11,7 +11,7 @@ const Favorites = ({myFavorites}) => {
 
     const handleOrder = (event) => {
         dispatch(orderCards(event.target.value))
-        setAux(true)
+        setAux(!aux)
     }
 
     const handleFilter = (event) => {
@@ -30,6 +30,7 @@ const Favorites = ({myFavorites}) => {
                 <option value='Genderless'> Genderless</option>
                 <option value='Unknown'> Unknown</option>
                 <option value='allCharacters'> allCharacters</option>
+               
             </select>
             {
                 myFavorites?.map((fav) =>{
@@ -60,6 +61,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    null)(Favorites)
+export default connect(mapStateToProps, null)(Favorites);

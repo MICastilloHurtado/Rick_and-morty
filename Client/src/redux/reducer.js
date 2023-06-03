@@ -8,7 +8,10 @@ const initialState = {
 function reducer(state = initialState, {type, typeload}){
     switch(type){
         case ADD_FAV:
-            return { ...state, myFavorites: typeload, allCharacters: typeload };
+            return { 
+                ...state,
+                 myFavorites: typeload,
+                  allCharacters: typeload };
             // return {...state,           
             //     myFavorites: [...state.allCharactersFav, typeload],
             //     allCharactersFav: [...state.allCharactersFav, typeload]}
