@@ -39,8 +39,10 @@ describe("Test de RUTAS", () => {
     })
 
     describe("POST /rickandmorty/fav", ()=>{
+        
         const character1 = {id:1, name:'james'}
         const character2 = {id:2, name:'rick'}
+
         it("Debes guardar el personaje en favoritos", async () => {
             const response = await request.post('/rickandmorty/fav').send(character1);
             expect(response.body).toContainEqual(character1);
@@ -50,7 +52,9 @@ describe("Test de RUTAS", () => {
             expect(response.body).toContainEqual(character1);
             expect(response.body).toContainEqual(character2);
         })
+        
     })
+    
     describe("DELETE /rickandmorty/fav/:id", ()=>{
         const character1 = {id:1, name:'james'}
         const character2 = {id:2, name:'rick'}
