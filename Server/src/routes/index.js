@@ -1,8 +1,8 @@
-const deleteFav = require('../controllers/deleteFav')
-const {getCharById} = require ('../controllers/getCharById')
-const login = require('../controllers/login')
-const postFav = require('../controllers/postFav.js')
-const postUser = require('../controllers/postUser')
+const deleteFav = require('../handlers/deleteFav')
+const {getCharById} = require ('../handlers/getCharById')
+const login = require('../handlers/login')
+const postFav = require('../handlers/postFav.js')
+const postUser = require('../handlers/postUser')
 const router = require('express').Router()
 
 

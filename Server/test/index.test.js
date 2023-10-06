@@ -31,7 +31,7 @@ describe("Test de RUTAS", () => {
 
         })
         it("responde con un objeto con la propiedad access en false si los datos del usuario son invalidos", async () => {
-            const response = await request.get('/rickandmorty/login?email=marcos@hotmail.com&password=marcos1432');
+            const response = await request.get('/rickandmorty/login?email=marcos@gmail.com&password=marcos1432');
             access.access = false
             expect(response.body).toEqual(access)
 
