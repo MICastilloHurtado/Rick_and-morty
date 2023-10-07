@@ -1,7 +1,7 @@
 const About = () => {
     return(
         <div>
-            <h1>Pagina in progress</h1>
+            <h1>Esta es mi primer pagina web</h1>
         </div>
     )
 }
