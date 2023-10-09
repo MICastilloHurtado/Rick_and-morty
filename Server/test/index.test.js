@@ -26,12 +26,12 @@ describe("Test de RUTAS", () => {
     describe("GET /rickandmorty/login", () =>{
         const access = {access : true}
         it("responde con un objeto con la propiedad access en true si los datos del usuario son validos", async () => {
-            const response = await request.get('/rickandmorty/login?email=marcos@gmail.com&password=marcos123');
+            const response = await request.get('/rickandmorty/login?email=marcos2679525@gmail.com&password=marcos123');
             expect(response.body).toEqual(access)
 
         })
         it("responde con un objeto con la propiedad access en false si los datos del usuario son invalidos", async () => {
-            const response = await request.get('/rickandmorty/login?email=marcos@gmail.com&password=marcos1432');
+            const response = await request.get('/rickandmorty/login?email=marcos2679525@gmail.com&password=marcos1432');
             access.access = false
             expect(response.body).toEqual(access)
 
@@ -40,12 +40,12 @@ describe("Test de RUTAS", () => {
 
     describe("POST /rickandmorty/fav", ()=>{
         
-        const character1 = {id:1, name:'james'}
-        const character2 = {id:2, name:'rick'}
+        const character1 = { name:"james", origin:"Earth (C-137)", status:"Alive", image:"https://rickandmortyapi.com/api/character/avatar/2.jpeg", species:"Human" , gender:"Male"}
+        const character2 = {  name:"Rick Sanchez", origin:"Earth (C-137)", status:"Alive", image:"https://rickandmortyapi.com/api/character/avatar/1.jpeg", species:"Human" , gender:"Male"}
 
         it("Debes guardar el personaje en favoritos", async () => {
             const response = await request.post('/rickandmorty/fav').send(character1);
-            expect(response.body).toContainEqual(character1);
+            expect(response.body).toContainEqual(expect.objectContaining(character1));
         })
         it('Devuelve el previo elemento enviado y el actual', async () => {
             const response = await request.post('/rickandmorty/fav').send(character2);
@@ -56,8 +56,6 @@ describe("Test de RUTAS", () => {
     })
     
     describe("DELETE /rickandmorty/fav/:id", ()=>{
-        const character1 = {id:1, name:'james'}
-        const character2 = {id:2, name:'rick'}
         it('Devuelve el arreglo correspondiente si no se elimina ningun personaje', async ()=>{
             const response = await request.delete('/rickandmorty/fav/324324');
             expect(response.body).toContainEqual(character1);
